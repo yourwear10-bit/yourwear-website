@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YourWear | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+  <div class="container header-inner">
+
+    <!-- LOGO -->
+    <a class="brand" href="index.html">
+      <img src="images/LOGO.png" alt="YourWear logo">
+      <strong>YourWear</strong>
+    </a>
+
+    <!-- SEARCH BAR -->
+    <div class="search-wrap">
+
+<input 
+type="text" 
+id="searchInput" 
+placeholder="Search (products, delivery, about...)"
+autocomplete="off"
+>
+
+<button onclick="runSearch()">Search</button>
+
+<div class="search-results" id="searchResults"></div>
+
+</div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About us</a>
+      <a href="legal.html">Legal</a>
+      <a href="contact.html">Contact us</a>
+    </nav>
+
+  </div>
+</header>
+  <main class="hero">
+    <!-- BACKGROUND SCROLLING IMAGES (BOTH SIDES) -->
+<div class="bg-scrolling-images" aria-hidden="true">
+
+  <!-- LEFT SIDE -->
+  <div class="scroll-col left up">
+    <img src="images/right-design.png" alt="">
+    
+  </div>
+
+  <div class="scroll-col left down">
+    <img src="images/left-design.jpg" alt="">
+    
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="scroll-col right up">
+    <img src="images/right-design.png" alt="">
+    
+  </div>
+
+  <div class="scroll-col right down">
+    <img src="images/left-design.jpg" alt="">
+    
+  </div>
+
+</div>
+    <div class="container hero-card hero-center">
+      <div class="kicker">CUSTOM WEAR</div>
+      <h1 class="h1 hero-text">Wear what you imagine</h1>
+
+      <p class="p">
+        <strong>YourWear</strong> is a customization-first brand: we create pieces that match your idea, your story, and your identity.
+        From clean minimal designs to bold statements — you choose, we craft.
+        Our philosophy is simple: <strong>quality</strong>, <strong>creativity</strong>, and <strong>details</strong>.
+      </p>
+
+      <div style="margin-top:18px;">
+       <a class="btn primary" href="shop.html#custom">Start customizing</a>
+<a class="btn" href="shop.html#ready" style="margin-left:8px;">Our own products</a>
+<a class="btn" href="about.html" style="margin-left:8px;">Discover the concept</a></a>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Identity</h3>
+          <p>Pieces designed to represent you — not just trends.</p>
+        </div>
+        <div class="card">
+          <h3>Craft</h3>
+          <p>Embroidery, printing, and finishing with attention to detail.</p>
+        </div>
+        <div class="card">
+          <h3>On-demand</h3>
+          <p>We customize based on your request and your preferences.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- DETAILS (embroidery tools + tailoring animation) -->
+  <section class="section" id="details">
+    <div class="container grid-2">
+      <div>
+        <div class="kicker">DETAILS</div>
+        <h2 class="h1" style="font-size: clamp(26px,3vw,38px);">We treat customization like a craft. From thread choice to placement and stitching style,
+          we focus on clean results that last.</h2>
+        <p class="p">
+         Your imagination is our creation
+        </p>
+
+        <div class="tools-row">
+          <div class="tool-pill"><span class="tool-icon"></span> Traditional clothes</div>
+          <div class="tool-pill"><span class="tool-icon"></span> Streetwear</div>
+          <div class="tool-pill"><span class="tool-icon"></span> Cosplay Fashion</div>
+          <div class="tool-pill"><span class="tool-icon"></span> Tailoring Finish</div>
+        </div>
+
+        <div class="thread">
+          <div class="thread-line"></div>
+          <small>Animated thread line = tailoring in motion.</small>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>What we customize</h3>
+        <p>
+          Hoodies, t-shirts, pants, jackets, caps, uniforms, and more — not only streetwear.
+          You can request minimal designs, logos, names, or full creative compositions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© YourWear — All rights reserved.</div>
+  </footer>
+
+  <!-- CHATBOT -->
+  <button id="chatToggle" class="chat-toggle" aria-label="Open chat">💬</button>
+  <div id="chatWidget" class="chat-widget" aria-hidden="true">
+    <div class="chat-header">
+      
+      <div>
+        <strong>YourWear Assistant</strong>
+        <div class="sub">24/7</div>
+      </div>
+      <button id="chatClose" class="chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chatBox" class="chat-box" aria-live="polite"></div>
+    <div id="quickReplies" class="quick-replies"></div>
+    <form id="chatForm" class="chat-form" autocomplete="off">
+      <input id="chatInput" type="text" placeholder="Type your message..." />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YourWear | About us</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ <header class="header">
+  <div class="container header-inner">
+
+    <!-- LOGO -->
+    <a class="brand" href="index.html">
+      <img src="images/LOGO.png" alt="YourWear logo">
+      <strong>YourWear</strong>
+    </a>
+
+    <!-- SEARCH BAR -->
+    <div class="search-wrap">
+
+<input 
+type="text" 
+id="searchInput" 
+placeholder="Search (products, delivery, about...)"
+autocomplete="off"
+>
+
+<button onclick="runSearch()">Search</button>
+
+<div class="search-results" id="searchResults"></div>
+
+</div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About us</a>
+      <a href="legal.html">Legal</a>
+      <a href="contact.html">Contact us</a>
+    </nav>
+
+  </div>
+</header>
+
+  <section class="section" id="concept">
+    <div class="container">
+      <div class="kicker">ABOUT</div>
+      <h1 class="h1" style="font-size: clamp(26px,3vw,40px);">Our concept</h1>
+
+      <div class="about-grid">
+        <img src="images/unnamed11.jpg" alt="YourWear concept photo 1">
+        <img src="images/step2.png" alt="YourWear concept photo 2">
+        <img src="images/stepp3.jpg" alt="YourWear concept photo 3">
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>1) You imagine it</h3>
+          <p>You bring the idea: a quote, a logo, a sketch, a vibe. Minimal or bold.</p>
+        </div>
+        <div class="card">
+          <h3>2) We craft it</h3>
+          <p>We turn your request into a clean design and apply it with quality finishing.</p>
+        </div>
+        <div class="card">
+          <h3>3) You wear it</h3>
+          <p>Custom pieces that feel personal — made to represent your identity.</p>
+        </div>
+      </div>
+      <!-- CUSTOMER REVIEWS -->
+<div class="reviews" id="reviews">
+  <div class="kicker">TESTIMONIALS</div>
+  <h2 class="h1" style="font-size: clamp(22px, 2.6vw, 34px);">Customers reviews</h2>
+
+  <div class="reviews-slider" aria-roledescription="carousel">
+    <button class="reviews-btn" type="button" aria-label="Previous review" id="revPrev">‹</button>
+
+    <div class="reviews-viewport" id="revViewport">
+      <div class="reviews-track" id="revTrack">
+
+        <!-- Review 1 -->
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <p class="review-text">
+            I customized a hoodie with embroidery on the chest and it came out exactly how I imagined it.
+            The quality is really good and the idea of creating your own piece is amazing.
+          </p>
+          <p class="review-name">— Youssef El Amrani</p>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <p class="review-text">
+            I wanted a jacket with a bandana pocket and they did it perfectly.
+            I love the concept of YourWear because you can really wear something unique.
+          </p>
+          <p class="review-name">— Sara Benali</p>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="review-card">
+          <div class="review-stars" aria-label="4 out of 5 stars">
+            ★★★★☆
+          </div>
+          <p class="review-text">
+            The process was simple: I uploaded my idea and described what I wanted.
+            A few days later I had a custom t-shirt that no one else has. Definitely recommend.
+          </p>
+          <p class="review-name">— Hamza El Idrissi</p>
+        </article>
+
+      </div>
+    </div>
+
+    <button class="reviews-btn" type="button" aria-label="Next review" id="revNext">›</button>
+  </div>
+
+  <div class="reviews-dots" id="revDots" aria-label="Review navigation"></div>
+</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© YourWear — About</div>
+  </footer>
+
+  <!-- CHATBOT -->
+  <button id="chatToggle" class="chat-toggle" aria-label="Open chat">💬</button>
+  <div id="chatWidget" class="chat-widget" aria-hidden="true">
+    <div class="chat-header">
+      
+      <div>
+        <strong>YourWear Assistant</strong>
+        <div class="sub">24/7</div>
+      </div>
+      <button id="chatClose" class="chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chatBox" class="chat-box" aria-live="polite"></div>
+    <div id="quickReplies" class="quick-replies"></div>
+    <form id="chatForm" class="chat-form" autocomplete="off">
+      <input id="chatInput" type="text" placeholder="Type your message..." />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

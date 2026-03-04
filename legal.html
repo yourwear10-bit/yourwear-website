@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YourWear | Legal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ <header class="header">
+  <div class="container header-inner">
+
+    <!-- LOGO -->
+    <a class="brand" href="index.html">
+      <img src="images/LOGO.png" alt="YourWear logo">
+      <strong>YourWear</strong>
+    </a>
+
+    <div class="search-wrap">
+
+<input 
+type="text" 
+id="searchInput" 
+placeholder="Search (products, delivery, about...)"
+autocomplete="off"
+>
+
+<button onclick="runSearch()">Search</button>
+
+<div class="search-results" id="searchResults"></div>
+
+</div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About us</a>
+      <a href="legal.html">Legal</a>
+      <a href="contact.html">Contact us</a>
+    </nav>
+
+  </div>
+</header>
+
+  <section class="section" id="policy">
+    <div class="container">
+      <div class="kicker">LEGAL</div>
+      <h1 class="h1" style="font-size: clamp(26px,3vw,40px);">Delivery & Refund policy</h1>
+
+      <ul class="legal-list">
+        <li><strong>Delivery time varies</strong> depending on the customization wanted (complexity, technique, and quantity).</li>
+        <li><strong>Refund is not acceptable</strong> because each piece is customized specifically for you.</li>
+        <li><strong>Free delivery</strong> for orders <strong>up to 300dh</strong> (i.e., <strong>300dh or more</strong>).</li>
+      </ul>
+
+      <div class="card" style="margin-top:16px;">
+        <h3>Important</h3>
+        <p>
+          Make sure your request details are clear (model, size, colors, placement).
+          We can confirm final details with you before production.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© YourWear — Legal</div>
+  </footer>
+
+  <!-- CHATBOT -->
+  <button id="chatToggle" class="chat-toggle" aria-label="Open chat">💬</button>
+  <div id="chatWidget" class="chat-widget" aria-hidden="true">
+    <div class="chat-header">
+      
+      <div>
+        <strong>YourWear Assistant</strong>
+        <div class="sub">24/7</div>
+      </div>
+      <button id="chatClose" class="chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chatBox" class="chat-box" aria-live="polite"></div>
+    <div id="quickReplies" class="quick-replies"></div>
+    <form id="chatForm" class="chat-form" autocomplete="off">
+      <input id="chatInput" type="text" placeholder="Type your message..." />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

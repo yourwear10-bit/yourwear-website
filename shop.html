@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YourWear | Shop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ <header class="header">
+  <div class="container header-inner">
+
+    <!-- LOGO -->
+    <a class="brand" href="index.html">
+      <img src="images/LOGO.png" alt="YourWear logo">
+      <strong>YourWear</strong>
+    </a>
+
+    <!-- SEARCH BAR -->
+   <div class="search-wrap">
+
+<input 
+type="text" 
+id="searchInput" 
+placeholder="Search (products, delivery, about...)"
+autocomplete="off"
+>
+
+<button onclick="runSearch()">Search</button>
+
+<div class="search-results" id="searchResults"></div>
+
+</div>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About us</a>
+      <a href="legal.html">Legal</a>
+      <a href="contact.html">Contact us</a>
+    </nav>
+
+  </div>
+</header>
+
+  <section class="section" id="ready">
+    <div class="container">
+      <!-- READY-TO-WEAR / SHOP NOW -->
+<section class="section">
+  <div class="container">
+    <div class="kicker">SHOP NOW</div>
+    <h1 class="h1" style="font-size: clamp(26px,3vw,40px);">Ready-to-wear selection</h1>
+    <p class="p">Choose a product, pick your size, and confirm the price.</p>
+
+    <div class="products-grid" id="productsGrid">
+      <!-- Product 1 -->
+      <div class="product-card" data-name="Classic Hoodie" data-price="249" onclick="openProduct(this)">
+
+  <div class="product-thumb">
+    <img src="images/hoodie.jpg" alt="Classic Hoodie">
+  </div>
+
+  <div class="product-info">
+    <p class="product-title">reverse zipper Hoodie</p>
+    <p class="product-price">249 DH</p>
+  </div>
+
+</div>
+
+      <!-- Product 2 -->
+      <div class="product-card" data-name="Minimal Tee" data-price="129" onclick="openProduct(this)">
+         <div class="product-thumb">
+    <img src="images/A1685F52-9FF6-4862-84CC-C513E16C7F7A.png" alt="Classic Hoodie">
+  </div>
+
+  <div class="product-info">
+    <p class="product-title">Modern YourWear black T-shirt</p>
+    <p class="product-price">129 DH</p>
+  </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card" data-name="Signature Cap" data-price="89" onclick="openProduct(this)">
+        <div class="product-thumb">
+    <img src="images/cap.png" alt="Classic Hoodie">
+  </div>
+
+  <div class="product-info">
+    <p class="product-title">Modern YourWear Customized cap</p>
+    <p class="product-price">89 DH</p>
+  </div>
+      </div>
+
+
+      <!-- Product 4 -->
+      <div class="product-card" data-name="Denim Jacket" data-price="299" onclick="openProduct(this)">
+        <div class="product-thumb"><img src="images/jacket.png" alt=""></div>
+        <div class="product-info">
+          <p class="product-title">jeans bandana Jacket</p>
+          <p class="product-price">299 DH</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT MODAL -->
+<div class="modal" id="productModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-label="Product details">
+    <div class="modal-head">
+      <div>
+        <h3 id="modalTitle">Product</h3>
+        <div style="color:var(--muted); font-weight:800;" id="modalSubtitle">Choose size</div>
+      </div>
+      <button class="modal-close" onclick="closeProduct()" aria-label="Close">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-row">
+        <label for="modalSize">Size</label>
+        <select id="modalSize" onchange="updateModalPrice()">
+          <option value="S">S</option>
+          <option value="M" selected>M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+      </div>
+
+      <div class="modal-price">
+        Price: <span id="modalPrice">0</span> DH
+      </div>
+
+      <button class="btn primary" type="button" onclick="addCurrentProductToCart()">
+  Add to cart
+</button>
+        Shop now
+      </button>
+    </div>
+  </div>
+</div>
+      <div class="kicker">SHOP</div>
+      <h1 class="h1" style="font-size: clamp(26px,3vw,40px);">Upload & describe your customization</h1>
+      <p class="p">
+        Import photos from your gallery (reference / inspiration / your logo), choose a model,
+        and describe exactly what you want.
+      </p>
+
+      <div class="upload-box">
+        <label for="userPhotos"><strong>1) Upload your photos</strong> (max 12 previews)</label>
+        <input id="userPhotos" type="file" accept="image/*" multiple style="margin-top:10px;" />
+        <div id="preview" class="preview"></div>
+      </div>
+
+      <form class="form" style="margin-top:16px;">
+        <div class="field">
+          <label for="model">2) Choose a model</label>
+          <select id="model">
+            <option>Hoodie</option>
+            <option>T-shirt</option>
+            <option>Cap</option>
+            <option>Jacket</option>
+            <option>Pants</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="technique">3) Editing options</label>
+          <select id="technique">
+            <option>Embroidery</option>
+            <option>Printing</option>
+            <option>Embroidery + Printing</option>
+            <option>Not sure (help me choose)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="color">4) Colors</label>
+          <input id="color" type="text" placeholder="Example: black hoodie, white embroidery / or tell us your palette" />
+        </div>
+
+        <div class="field">
+          <label for="details">5) Describe what you actually want</label>
+          <textarea id="details" placeholder="Tell us: text/logo, placement (front/back/sleeve), size, style, and anything important..."></textarea>
+        </div>
+
+        <button class="btn primary" type="button" onclick="alert('Saved locally (demo). Later you can connect this to WhatsApp/email/backend).')">
+          Save request (demo)
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© YourWear — Shop</div>
+  </footer>
+
+  <!-- CHATBOT -->
+  <button id="chatToggle" class="chat-toggle" aria-label="Open chat">💬</button>
+  <div id="chatWidget" class="chat-widget" aria-hidden="true">
+    <div class="chat-header">
+      
+      <div>
+        <strong>YourWear Assistant</strong>
+        <div class="sub">24/7</div>
+      </div>
+      <button id="chatClose" class="chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chatBox" class="chat-box" aria-live="polite"></div>
+    <div id="quickReplies" class="quick-replies"></div>
+    <form id="chatForm" class="chat-form" autocomplete="off">
+      <input id="chatInput" type="text" placeholder="Type your message..." />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+<!-- CART BUTTON -->
+<button class="cart-fab" id="cartFab" type="button" aria-label="Open cart">
+  🛒 <span id="cartCount">0</span>
+</button>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-head">
+    <strong>Your Cart</strong>
+    <button class="cart-close" type="button" onclick="closeCart()">✕</button>
+  </div>
+
+  <div class="cart-body" id="cartBody"></div>
+
+  <div class="cart-foot">
+    <div class="cart-total">
+      Total: <span id="cartTotal">0</span> DH
+    </div>
+    <button class="btn primary" type="button" onclick="checkoutWhatsApp()">
+      Checkout (WhatsApp)
+    </button>
+    <small class="cart-note">This is a demo checkout. Later we can connect payment.</small>
+  </div>
+</div>
+</body>
+</html>
