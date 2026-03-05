@@ -1010,3 +1010,83 @@ transform: scale(1);
   .reviews-slider{ grid-template-columns: 36px 1fr 36px; }
   .reviews-btn{ width: 36px; height: 36px; }
 }
+/* ===== MOBILE FIXES ===== */
+@media (max-width: 720px){
+
+  /* Header becomes stacked */
+  .header-inner{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .brand{
+    justify-content: center;
+  }
+
+  /* Search full width */
+  .search-wrap{
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Nav wraps and centers */
+  .nav{
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav a{
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+}
+@media (max-width: 720px){
+  .hero{
+    min-height: auto;
+    padding: 18px 0;
+  }
+
+  .hero-card{
+    padding: 18px;
+  }
+
+  .slogan, .h1{
+    font-size: 30px;   /* less huge on phone */
+  }
+
+  .p{
+    font-size: 15px;
+  }
+
+  /* Buttons stack instead of staying in one line */
+  .hero-center > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+@media (max-width: 720px){
+  .scroll-col img{
+    width: 120px;   /* smaller */
+  }
+
+  .scroll-col.left{ left: 8px; }
+  .scroll-col.right{ right: 8px; }
+
+  /* Make them lighter so they don’t compete with text */
+  .scroll-col{
+    opacity: 0.18;
+  }
+}
+@media (max-width: 900px){
+  .products-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px){
+  .products-grid{ grid-template-columns: 1fr; }
+  .product-thumb{ height: 170px; }
+}
+@media (max-width: 900px){
+  .about-grid{ grid-template-columns: 1fr; }
+}
